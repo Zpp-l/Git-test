@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="borderPane" prefHeight="662.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <left>
+      <TreeView fx:id="treeView" prefHeight="470.0" prefWidth="180.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <TableView fx:id="TView" prefHeight="658.0" prefWidth="278.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="Kuai" prefWidth="74.0" text="磁盘块" />
+          <TableColumn fx:id="Value" minWidth="2.6666259765625" prefWidth="73.333251953125" text="值" />
+            <TableColumn fx:id="Type" prefWidth="63.3333740234375" text="类型" />
+            <TableColumn fx:id="Text" prefWidth="68.0" text="内容" />
+        </columns>
+      </TableView>
+   </right>
+   <center>
+      <FlowPane fx:id="flowPane" prefHeight="658.0" prefWidth="856.0" style="-fx-background-color: white;" styleClass="flow_pane" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <HBox prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="backBt" mnemonicParsing="false" text="后退" />
+            <Button fx:id="AheadBt" mnemonicParsing="false" text="前进" />
+            <TextField />
+         </children></HBox>
+   </top>
+   <bottom>
+      <TableView fx:id="underTView" nodeOrientation="LEFT_TO_RIGHT" prefHeight="142.0" prefWidth="973.0" style="-fx-border-color: white;" styleClass="under_tableView" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="fPath" prefWidth="175.0" styleClass="under_tableColumn" text="文件路径名" />
+            <TableColumn fx:id="fPoper" prefWidth="122.0" styleClass="under_tableColumn" text="文件属性" />
+          <TableColumn fx:id="Start" prefWidth="112.0" styleClass="under_tableColumn" text="起始盘块号" />
+          <TableColumn fx:id="fLength" prefWidth="122.0" styleClass="under_tableColumn" text="文件长度" />
+            <TableColumn fx:id="operType" prefWidth="117.0" styleClass="under_tableColumn" text="操作类型" />
+            <TableColumn fx:id="RedPoint" minWidth="13.33331298828125" prefWidth="96.0" styleClass="under_tableColumn" text="读指针">
+               <columns>
+                  <TableColumn prefWidth="83.33331298828125" text="块号" />
+                  <TableColumn prefWidth="70.0" text="块内地址" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="WritePoint" prefWidth="150.0" styleClass="under_tableColumn" text="写指针">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="块号" />
+                  <TableColumn prefWidth="75.0" text="块内地址" />
+               </columns>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </bottom>
+</BorderPane>
